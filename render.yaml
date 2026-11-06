@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: week6-production-rest-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: API_TOKEN
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:///./week6_api.db
+      - key: DEBUG
+        value: "false"

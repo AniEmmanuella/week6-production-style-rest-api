@@ -1,0 +1,42 @@
+### Health check
+GET http://127.0.0.1:8000/health
+
+### Root
+GET http://127.0.0.1:8000/
+
+### Create a task (replace token with your .env API_TOKEN)
+POST http://127.0.0.1:8000/api/v1/tasks/
+Authorization: Bearer replace-this-with-your-token
+Content-Type: application/json
+
+{
+  "title": "Complete Week 6 project",
+  "description": "Build and test the production-style API",
+  "status": "in_progress",
+  "priority": "high"
+}
+
+### List tasks with pagination
+GET http://127.0.0.1:8000/api/v1/tasks/?limit=10&offset=0
+Authorization: Bearer replace-this-with-your-token
+
+### Filter tasks
+GET http://127.0.0.1:8000/api/v1/tasks/?status=pending&priority=high&search=project
+Authorization: Bearer replace-this-with-your-token
+
+### Get one task (replace 1 with a real ID)
+GET http://127.0.0.1:8000/api/v1/tasks/1
+Authorization: Bearer replace-this-with-your-token
+
+### Update a task
+PATCH http://127.0.0.1:8000/api/v1/tasks/1
+Authorization: Bearer replace-this-with-your-token
+Content-Type: application/json
+
+{
+  "status": "completed"
+}
+
+### Delete a task
+DELETE http://127.0.0.1:8000/api/v1/tasks/1
+Authorization: Bearer replace-this-with-your-token
